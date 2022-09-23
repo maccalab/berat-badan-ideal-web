@@ -10,9 +10,9 @@ if ($result->num_rows > 0) {
             'nama' => $row['nama'],
             'jenis_kelamin' => $row['jenis_kelamin'],
             'umur' => $row['umur'],
-            'berat_badan' => $row['berat_badan'],
-            'tinggi_badan' => $row['tinggi_badan'],
-            'kategori' => $row['kategori'],
+            'berat_badan' => $row['berat_badan'] == null ? "Mohon tunggu.." : $row['berat_badan'],
+            'tinggi_badan' => $row['tinggi_badan'] == null ? "Mohon tunggu.." : $row['tinggi_badan'],
+            'kategori' => $row['kategori'] == null ? "Mohon tunggu.." : $row['kategori'],
             'alamat' => $row['alamat']
         ];
     }

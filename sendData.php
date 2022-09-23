@@ -15,6 +15,6 @@ if($gender == "Laki-laki"){
 }else{
     $gender = "P";
 }
-$firebase->set(PATH . '/Gender', $gender);
+$firebase->set(PATH . '/biodata/gender', $gender);
 echo json_encode('success');
 ?>

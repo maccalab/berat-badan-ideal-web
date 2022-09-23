@@ -5,14 +5,18 @@ if(isset($_GET['nama'])){
     $jk = $_GET['gender'];
     $umur = $_GET['umur'];
     $alamat = $_GET['alamat'];
+    if($jk == "P"){
+        $jk = "Perempuan";
+    }else if($jk == "L"){
+        $jk = "Laki - laki";
+    }
 
-    $sql = "INSERT INTO `data` (nama, jenis_kelamin, umur, berat_badan, tinggi_badan, kategori, alamat) VALUES ('$nama', '$jk', '$umur', '$berat', '$tinggi', '$kategori', '$alamat')";
+    $sql = "INSERT INTO `data` (nama, jenis_kelamin, umur, alamat) VALUES ('$nama', '$jk', '$umur', '$alamat')";
     if ($conn->query($sql) === TRUE) {
     echo "data stored successfully";
     } else {
     echo "Error store data: " . $conn->error;
-}
-
+    }
 }else if(isset($_GET['berat'])){
     $berat = $_GET['berat'];
     $tinggi = $_GET['tinggi'];
@@ -42,5 +46,4 @@ if(isset($_GET['nama'])){
     echo "Error updating record: " . $conn->error;
     }
 }
-echo json_encode('OK');
 ?>
