@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="assets/landingPage/css/theme.bundle.css" />
     
     <!-- Title -->
-    <title>Sistem Monitoring Suhu</title>
+    <title>Sistem Deteksi Berat Badan Ideal</title>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -79,11 +79,14 @@
                 <a href="<?=$BASE_URL;?>dashboard.php" class="btn btn-success-soft shadow lift me-1">
                   <span class="fe fe-monitor d-none d-md-inline p-0 m-0"></span> Beranda 
                 </a>
-              <?php else : ?>
+                <?php else : ?>
+                <a href="<?=$BASE_URL;?>login.php" class="btn btn-info-soft  shadow lift me-1">
+                  <span class="fe fe-log-in d-none d-md-inline p-0 m-0"></span> Masuk 
+                </a>
+              <?php endif; ?>
                 <a href="<?=$BASE_URL;?>registrasi.php" class="btn btn-info-soft  shadow lift me-1">
                   <span class="fe fe-log-in d-none d-md-inline p-0 m-0"></span> Deteksi 
                 </a>
-              <?php endif; ?>
               
             </div>
 
