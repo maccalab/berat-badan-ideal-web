@@ -3,7 +3,7 @@
 <?php
    include('session.php');
    include('env.php');
-   $sql = "SELECT * FROM `data` ORDER BY id DESC";
+   $sql = "SELECT * FROM `data` WHERE berat_badan IS NOT NULL ORDER BY id DESC";
    $result = $conn->query($sql);
 ?>
   <head>
@@ -145,7 +145,7 @@
           <div class="col">
             <p class="text-center text-muted small mb-0">
               &copy; <?= date('Y');
-              ?> <a href="https://maccalab.com/" target="_blank" class="text-muted">Monitoring Suhu by MaccaLab</a>
+              ?> <a href="https://maccalab.com/" target="_blank" class="text-muted">Deteksi Berat Badan Ideal by MaccaLab</a>
           </div>
         </div> <!-- / .row -->
       </div> <!-- / .container -->
