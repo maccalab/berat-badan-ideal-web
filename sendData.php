@@ -8,6 +8,12 @@ use Firebase\FirebaseLib;
 
 $firebase = new FirebaseLib(URL, TOKEN);
 
+if(isset($_GET['reset'])){
+    $firebase->set(PATH . '/result/Send', 0);
+    echo json_encode('success');
+    return;
+}
+
 // Storing a int Gender
 $gender = $_POST['gender'];
 $nama = $_POST['nama'];
@@ -22,5 +28,6 @@ $firebase->set(PATH . '/biodata/umur', $umur);
 $firebase->set(PATH . '/biodata/gender', $gender);
 $firebase->set(PATH . '/biodata/nama', $nama);
 $firebase->set(PATH . '/biodata/alamat', $alamat);
+$firebase->set(PATH . '/result/Status', 1);
 echo json_encode('success');
 ?>

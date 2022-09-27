@@ -97,8 +97,8 @@
                                     <td> <?= $row['nama']; ?> </td>
                                     <td> <?= $row['jenis_kelamin']; ?> </td>
                                     <td> <?= $row['umur']; ?> Tahun</td>
-                                    <td> <?= $row['berat_badan']; ?> Cm </td>
-                                    <td> <?= $row['tinggi_badan']; ?> Kg </td>
+                                    <td> <?= $row['berat_badan']; ?> Kg </td>
+                                    <td> <?= $row['tinggi_badan']; ?> Cm </td>
                                     <td> <?= $row['kategori']; ?> </td>
                                     <td> <?= $row['alamat']; ?> </td>
                                     </tr>

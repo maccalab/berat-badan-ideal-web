@@ -19,7 +19,10 @@ var result = db.ref("result");
 var biodata = db.ref("biodata");
 result.on("value", function(snapshot) {
   console.log(snapshot.val());
-  updateDb(snapshot.val().Berat, snapshot.val().Tinggi, snapshot.val().Ideal);
+  if(snapshot.val().Send == 1){
+    updateDb(snapshot.val().Berat, snapshot.val().Tinggi, snapshot.val().Ideal);
+    resetSend();
+  }
 }, (errorObject) => {
     console.log("The read failed: " + errorObject.name);
     });
@@ -55,6 +58,27 @@ function updateDb(berat, tinggi, kategori){
 function insertData(nama, jenis_kelamin, umur, alamat){
   console.log("updating database");
   http.get('http://localhost/berat-badan-ideal-web/insertData.php?nama='+nama+'&gender='+jenis_kelamin+'&umur='+umur+'&alamat='+alamat, (resp) => {
+  let data = '';
+
+  // A chunk of data has been received.
+  resp.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  resp.on('end', () => {
+    // console.log(JSON.parse(data).result);
+    console.log(data);
+  });
+
+  }).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+}
+
+function resetSend(){
+  console.log("reset send field firebase");
+  http.get('http://localhost/berat-badan-ideal-web/sendData.php?reset=1', (resp) => {
   let data = '';
 
   // A chunk of data has been received.
