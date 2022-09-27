@@ -4,6 +4,7 @@ const http = require('http');
 var admin = require("firebase-admin");
 
 // Fetch the service account key JSON file contents
+// var serviceAccount = require("C:/laragon/www/berat-badan-ideal-web/webhook/services-account-file.json");
 var serviceAccount = require("C:/xampp/htdocs/berat-badan-ideal-web/webhook/services-account-file.json");
 
 // Initialize the app with a service account, granting admin privileges

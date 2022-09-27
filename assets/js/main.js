@@ -39,6 +39,7 @@ $(".btn-registrasi").on('click', function(){
 						nama: nama,
 						gender: jenis_kelamin,
 						alamat: alamat,
+						age: umur,
 					},
 					success: function(response) {
 						if (response == 'success') {
@@ -139,8 +140,8 @@ function getResult(){
 			url: baseURL+"getResult.php",
 			success: function(response) {
 				$("#nama_hasil").html('Nama Lengkap : '+response.nama)
-				$("#umur_hasil").html('Umur : '+response.jenis_kelamin)
-				$("#jk_hasil").html('Jenis Kelamin : '+response.umur)
+				$("#umur_hasil").html('Umur : '+response.umur)
+				$("#jk_hasil").html('Jenis Kelamin : '+response.jenis_kelamin)
 				$("#berat_hasil").html('Berat Badan : '+response.berat_badan)
 				$("#tinggi_hasil").html('Tinggi Badan : '+response.tinggi_badan)
 				$("#kategori_hasil").html('Kategori : '+response.kategori)

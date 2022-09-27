@@ -36,7 +36,7 @@ CREATE TABLE `data` (
   `tinggi_badan` int DEFAULT NULL,
   `kategori` varchar(50) DEFAULT NULL,
   `alamat` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `data`
@@ -56,7 +56,7 @@ CREATE TABLE `user` (
   `id` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `user`
